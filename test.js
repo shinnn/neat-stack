@@ -32,7 +32,7 @@ test('neatStack()', t => {
   );
 
   t.strictEqual(
-    neatStack(new Set([new Buffer(0)])),
+    neatStack(new Set([Buffer.alloc(0)])),
     red('Set { <Buffer > }'),
     'should return a red-colored util.inspect result if it takes a non-error object.'
   );
