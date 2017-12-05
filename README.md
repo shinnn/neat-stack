@@ -1,6 +1,6 @@
 # neat-stack
 
-[![NPM version](https://img.shields.io/npm/v/neat-stack.svg)](https://www.npmjs.com/package/neat-stack)
+[![npm version](https://img.shields.io/npm/v/neat-stack.svg)](https://www.npmjs.com/package/neat-stack)
 [![Build Status](https://travis-ci.org/shinnn/neat-stack.svg?branch=master)](https://travis-ci.org/shinnn/neat-stack)
 [![Build status](https://ci.appveyor.com/api/projects/status/x8vq3s90c2x0putc/branch/master?svg=true)](https://ci.appveyor.com/project/ShinnosukeWatanabe/neat-stack/branch/master)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/neat-stack.svg)](https://coveralls.io/github/shinnn/neat-stack?branch=master)
@@ -20,7 +20,7 @@ Useful for CLI applications — stack traces are not very important for end user
 
 ## Installation
 
-[Use npm.](https://docs.npmjs.com/cli/install)
+[Use](https://docs.npmjs.com/cli/install) [npm](https://docs.npmjs.com/getting-started/what-is-npm).
 
 ```
 npm install neat-stack
@@ -64,4 +64,4 @@ neatStack(error); /* => `\u001b[31mError: Hi\u001b[2m
 
 ## License
 
-[Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed)
+[ISC License](./LICENSE) © 2017 Shinnosuke Watanabe
