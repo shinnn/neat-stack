@@ -1,6 +1,6 @@
 {
 	"name": "neat-stack",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Make a color-coded stack trace from an error",
 	"repository": "shinnn/neat-stack",
 	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
