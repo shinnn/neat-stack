@@ -37,5 +37,17 @@ test('neatStack()', t => {
 		'should return a red-colored util.inspect result if it takes a non-error object.'
 	);
 
+	t.throws(
+		() => neatStack(),
+		/^RangeError.*Expected 1 argument, but got no arguments\./,
+		'should throw an error when it takes no arguments.'
+	);
+
+	t.throws(
+		() => neatStack(1, 2),
+		/^RangeError.*Expected 1 argument, but got 2 arguments\./,
+		'should throw an error when it takes too many arguments.'
+	);
+
 	t.end();
 });

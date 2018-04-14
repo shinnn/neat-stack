@@ -1,23 +1,26 @@
 'use strict';
 
-const inspect = require('util').inspect;
+const {inspect} = require('util');
 
-const chalk = require('chalk');
+const {dim, red} = require('chalk');
 const cleanStack = require('clean-stack');
 
-const dim = chalk.dim;
-const red = chalk.red;
+module.exports = function neatStack(...args) {
+	if (args.length !== 1) {
+		throw new RangeError(`Expected 1 argument, but got ${args.length || 'no'} arguments.`);
+	}
 
-module.exports = function neatStack(error) {
+	const [error] = args;
+
 	if (typeof error === 'string') {
 		return red(error);
 	}
 
-	if (!error || typeof error !== 'object' || typeof error.stack !== 'string') {
+	if (error === null || typeof error !== 'object' || typeof error.stack !== 'string') {
 		return red(inspect(error));
 	}
 
-	const title = String(error);
+	const title = error.toString();
 	const stack = cleanStack(error.stack);
 
 	if (!stack.startsWith(title)) {
