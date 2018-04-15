@@ -13,7 +13,7 @@ module.exports = function neatStack(...args) {
 	const [error] = args;
 
 	if (typeof error === 'string') {
-		return red(error);
+		return red(cleanStack(error));
 	}
 
 	if (error === null || typeof error !== 'object' || typeof error.stack !== 'string') {

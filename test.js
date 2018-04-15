@@ -32,6 +32,15 @@ test('neatStack()', t => {
 	);
 
 	t.equal(
+		neatStack(`Error: error
+		at repl:1:1
+		at Script.runInThisContext (vm.js:65:33)`),
+		red(`Error: error
+		at repl:1:1`),
+		'should clean up stack trace even if it takes a string.'
+	);
+
+	t.equal(
 		neatStack(new Set([Buffer.alloc(0)])),
 		red('Set { <Buffer > }'),
 		'should return a red-colored util.inspect result if it takes a non-error object.'
