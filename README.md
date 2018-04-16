@@ -14,7 +14,7 @@ const request = require('request');
 request('foo', err => console.error(neatStack(err)));
 ```
 
-![screenshot](screenshot.png)
+<img alt="example" src="./screenshot.svg" width="890">
 
 Useful for CLI applications — stack traces are not very important for end users but needed for authors to receive meaningful bug reports.
 
