@@ -34,7 +34,7 @@ const neatStack = require('neat-stack');
 
 ### neatStack(*error*)
 
-*error*: `Error`  
+*error*: `Error` or `string` of `Error#stack`  
 Return: `string`
 
 It returns a refined [`Error#stack`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/Stack):
