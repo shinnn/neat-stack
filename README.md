@@ -34,7 +34,7 @@ const neatStack = require('neat-stack');
 
 ### neatStack(*error*)
 
-*error*: `Error` or `string` of `Error#stack`  
+*error*: `Error`  
 Return: `string`
 
 It returns a refined [`Error#stack`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/Stack):
@@ -47,19 +47,18 @@ It returns a refined [`Error#stack`](https://developer.mozilla.org/docs/Web/Java
 const error = new Error('Hi');
 
 error.stack; /* => `Error: Hi
-    at Object.<anonymous> (/Users/example/run.js:1:77)
-    at Module._compile (module.js:571:32)
-    at Object.Module._extensions..js (module.js:580:10)
-    at Module.load (module.js:488:32)
-    at tryModuleLoad (module.js:447:12)
-    at Function.Module._load (module.js:439:3)
-    at Module.runMain (module.js:605:10)
-    at run (bootstrap_node.js:423:7)
-    at startup (bootstrap_node.js:147:9)
-    at bootstrap_node.js:538:3` */
+    at Object.<anonymous> (/Users/example/run.js:1:75)
+    at Module._compile (internal/modules/cjs/loader.js:654:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:665:10)
+    at Module.load (internal/modules/cjs/loader.js:566:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:506:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:498:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:695:10)
+    at startup (internal/bootstrap/node.js:201:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:516:3)` */
 
 neatStack(error); /* => `\u001b[31mError: Hi\u001b[2m
-    at Object.<anonymous> (/Users/example/run.js:1:77)\u001b[22m\u001b[39m` */
+    at Object.<anonymous> (/Users/example/run.js:1:88)\u001b[22m\u001b[39m` */
 ```
 
 ## License
