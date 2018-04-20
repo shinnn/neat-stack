@@ -1,18 +1,25 @@
 'use strict';
 
+const {homedir} = require('os');
+const {join} = require('path');
+
 const {dim, red} = require('chalk');
 const neatStack = require('.');
 const test = require('tape');
+const tildePath = require('tilde-path');
+
+const home = homedir();
 
 test('neatStack()', t => {
+	const path = tildePath(join(home, 'hello', 'world.js')).replace(/\\/g, '/');
 	const error = new Error('foo');
 	error.stack = `Error: foo
-    at foo (/hello/world.js:1:1)\r\n    at bar (\\hello\\world.js:3:4)
+    at foo (${path}:1:1)\r\n    at bar (${path}:3:4)
     at createScript (vm.js:53:10)`;
 
 	t.equal(
 		neatStack(error),
-		red(`Error: foo${dim('\n    at foo (/hello/world.js:1:1)\r\n    at bar (/hello/world.js:3:4)')}`),
+		red(`Error: foo${dim(`\n    at foo (${path}:1:1)\r\n    at bar (${path}:3:4)`)}`),
 		'should stringify the error with colors.'
 	);
 

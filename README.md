@@ -42,6 +42,7 @@ It returns a refined [`Error#stack`](https://developer.mozilla.org/docs/Web/Java
 * Red-colored by [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code).
 * Lines starting with `'    at'` are dimmed.
 * [Any lines from Node.js internals are omitted](https://github.com/sindresorhus/clean-stack).
+* Paths are simplified by [replacing a home directory with `~`](https://github.com/shinnn/tilde-path) on POSIX.
 
 ```javascript
 const error = new Error('Hi');
@@ -58,7 +59,7 @@ error.stack; /* => `Error: Hi
     at bootstrapNodeJSCore (internal/bootstrap/node.js:516:3)` */
 
 neatStack(error); /* => `\u001b[31mError: Hi\u001b[2m
-    at Object.<anonymous> (/Users/example/run.js:1:88)\u001b[22m\u001b[39m` */
+    at Object.<anonymous> (~/example/run.js:1:88)\u001b[22m\u001b[39m` */
 ```
 
 ## License

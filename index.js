@@ -11,9 +11,10 @@ module.exports = function neatStack(...args) {
 	}
 
 	const [error] = args;
+	const option = {pretty: process.platform !== 'win32'};
 
 	if (typeof error === 'string') {
-		return red(cleanStack(error));
+		return red(cleanStack(error, option));
 	}
 
 	if (error === null || typeof error !== 'object' || typeof error.stack !== 'string') {
@@ -21,11 +22,11 @@ module.exports = function neatStack(...args) {
 	}
 
 	const title = error.toString();
-	const stack = cleanStack(error.stack);
+	const stack = cleanStack(error.stack, option);
 
 	if (!stack.startsWith(title)) {
 		return red(stack);
 	}
 
-	return red(`${title}${dim(cleanStack(error.stack).slice(title.length))}`);
+	return red(`${title}${dim(cleanStack(error.stack, option).slice(title.length))}`);
 };

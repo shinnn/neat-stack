@@ -35,7 +35,8 @@
 		"@shinnn/eslint-config-node": "^5.0.0",
 		"eslint": "^4.19.1",
 		"nyc": "^11.7.1",
-		"tape": "^4.9.0"
+		"tape": "^4.9.0",
+		"tilde-path": "^2.0.0"
 	},
 	"eslintConfig": {
 		"extends": "@shinnn/node"
