@@ -11,7 +11,7 @@ const tildePath = require('tilde-path');
 const home = homedir();
 
 test('neatStack()', t => {
-	const path = tildePath(join(home, 'hello', 'world.js')).replace(/\\/g, '/');
+	const path = tildePath(join(home, 'hello', 'world.js')).replace(/\\/ug, '/');
 	const error = new Error('foo');
 	error.stack = `Error: foo
     at foo (${path}:1:1)\r\n    at bar (${path}:3:4)
@@ -55,13 +55,13 @@ test('neatStack()', t => {
 
 	t.throws(
 		() => neatStack(),
-		/^RangeError.*Expected 1 argument, but got no arguments\./,
+		/^RangeError.*Expected 1 argument, but got no arguments\./u,
 		'should throw an error when it takes no arguments.'
 	);
 
 	t.throws(
 		() => neatStack(1, 2),
-		/^RangeError.*Expected 1 argument, but got 2 arguments\./,
+		/^RangeError.*Expected 1 argument, but got 2 arguments\./u,
 		'should throw an error when it takes too many arguments.'
 	);
 

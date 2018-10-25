@@ -4,11 +4,11 @@
 	"description": "Make a color-coded stack trace from an error",
 	"repository": "shinnn/neat-stack",
 	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
-	"scripts": {
-		"pretest": "eslint --fix --format=codeframe index.js test.js",
-		"test": "nyc --reporter=html --reporter=text node test.js"
-	},
 	"license": "ISC",
+	"scripts": {
+		"pretest": "eslint .",
+		"test": "nyc node test.js"
+	},
 	"files": [
 		"index.js"
 	],
@@ -28,17 +28,21 @@
 		"cli-friendly"
 	],
 	"dependencies": {
-		"chalk": "^2.4.0",
-		"clean-stack": "^1.3.0"
+		"chalk": "^2.4.1",
+		"clean-stack": "^2.0.0"
 	},
 	"devDependencies": {
-		"@shinnn/eslint-config-node": "^5.0.0",
-		"eslint": "^4.19.1",
-		"nyc": "^11.7.1",
-		"tape": "^4.9.0",
-		"tilde-path": "^2.0.0"
+		"@shinnn/eslint-config": "^6.7.5",
+		"eslint": "^5.8.0",
+		"nyc": "^13.1.0",
+		"nyc-config-common": "^1.0.1",
+		"tape": "^4.9.1",
+		"tilde-path": "^3.0.0"
 	},
 	"eslintConfig": {
-		"extends": "@shinnn/node"
+		"extends": "@shinnn"
+	},
+	"nyc": {
+		"extends": "nyc-config-common"
 	}
 }
