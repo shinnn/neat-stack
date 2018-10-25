@@ -2,7 +2,6 @@
 
 [![npm version](https://img.shields.io/npm/v/neat-stack.svg)](https://www.npmjs.com/package/neat-stack)
 [![Build Status](https://travis-ci.org/shinnn/neat-stack.svg?branch=master)](https://travis-ci.org/shinnn/neat-stack)
-[![Build status](https://ci.appveyor.com/api/projects/status/x8vq3s90c2x0putc/branch/master?svg=true)](https://ci.appveyor.com/project/ShinnosukeWatanabe/neat-stack/branch/master)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/neat-stack.svg)](https://coveralls.io/github/shinnn/neat-stack?branch=master)
 
 Make a color-coded stack trace from an error
