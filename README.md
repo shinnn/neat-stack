@@ -1,7 +1,7 @@
 # neat-stack
 
 [![npm version](https://img.shields.io/npm/v/neat-stack.svg)](https://www.npmjs.com/package/neat-stack)
-[![Build Status](https://travis-ci.org/shinnn/neat-stack.svg?branch=master)](https://travis-ci.org/shinnn/neat-stack)
+[![Build Status](https://travis-ci.com/shinnn/neat-stack.svg?branch=master)](https://travis-ci.com/shinnn/neat-stack)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/neat-stack.svg)](https://coveralls.io/github/shinnn/neat-stack?branch=master)
 
 Make a color-coded stack trace from an error
@@ -19,7 +19,7 @@ Useful for CLI applications — stack traces are not very important for end user
 
 ## Installation
 
-[Use](https://docs.npmjs.com/cli/install) [npm](https://docs.npmjs.com/getting-started/what-is-npm).
+[Use](https://docs.npmjs.com/cli/install) [npm](https://docs.npmjs.com/about-npm/).
 
 ```
 npm install neat-stack
@@ -63,4 +63,4 @@ neatStack(error); /* => `\u001b[31mError: Hi\u001b[2m
 
 ## License
 
-[ISC License](./LICENSE) © 2017 - 2018 Shinnosuke Watanabe
+[ISC License](./LICENSE) © 2017 - 2019 Shinnosuke Watanabe
